@@ -1,3 +1,3 @@
-'Tango with Django' project
-django==1.5.5
-python==2.7.5
+'Tango with Django' project\n
+django==1.5.5\n
+python==2.7.5\n
