@@ -1,0 +1,50 @@
+{% comment %}{% extends 'rango/base.html' %}
+
+    <div class="hero-unit">
+        <h1>Ready to Rango</h1>
+        <p>Find, Add, Share and Rango useful links and resources.</p>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <h3>Top Five Categories</h>
+            {% if categories_most_viewed %}
+            <ul>
+                {% for category in categories_most_viewed %}
+                <li><a href="/rango/category/{{ category.url }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>No categories at present.</strong>
+            {% endif %}
+
+        </div>
+
+{% endcomment %}
+
+            <ul class="nav nav-list">
+               {% if cat_list %}
+                {% for cat in cat_list %}
+                  <li><a href="/rango/category/{{ cat.url }}">{{ cat.name }}</a></li>
+                {% endfor %}
+               {% else %}
+                <li>No categories at present.</li>
+               {% endif %}
+            </ul>
+        <!--/span-->
+        {% comment %}<div class="span6">
+            <h2>Top Five Pages</h2>
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url}}">{{ page.title }}</a> - {{ page.category }} ({{ page.views }} view(s))</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>No pages at present.</strong>
+            {% endif %}
+
+        </div>
+        <!--/span-->
+    </div>{% endcomment %}
+    <!--/row-->
