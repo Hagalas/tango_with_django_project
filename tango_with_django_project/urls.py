@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 )
 
 handler404 = 'tango_with_django.views.handler404'
+handler500 = 'tango_with_django.views.handler500'
 
 
 if settings.DEBUG:
