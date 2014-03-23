@@ -17,7 +17,11 @@ urlpatterns = patterns('',
     url(r'^rango/', include('rango.urls')), # ADD THIS NEW TUPLE!
 
 
+
 )
+
+handler404 = 'tango_with_django.views.handler404'
+
 
 if settings.DEBUG:
     urlpatterns += patterns(

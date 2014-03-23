@@ -495,4 +495,3 @@ def auto_add_page(request):
             context_dict['pages'] = pages
     return render_to_response('rango/page_list.html', context_dict, context)
 
-
