@@ -20,8 +20,8 @@ urlpatterns = patterns('',
 
 )
 
-handler404 = 'tango_with_django.views.handler404'
-handler500 = 'tango_with_django.views.handler500'
+#handler404 = 'tango_with_django_project.views.handler404'
+#handler500 = 'tango_with_django_project.views.handler500'
 
 
 if settings.DEBUG:
