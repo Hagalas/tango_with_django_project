@@ -2,20 +2,16 @@ $(document).ready(function(){
 
     // JQuery code to be added here.
 
-    // Like button with html5 local storage
-    if(!window.localStorage.getItem("disable-"+$('#likes').attr("data-catid"))){
-        $('#likes').click(function(){
-            var catid;
-            catid=$(this).attr("data-catid");
-            $.get('/rango/like_category/', {category_id: catid}, function(data){
-                $('#like_count').html(data);
-                $('#likes').hide();
-                window.localStorage.setItem("disable-"+$('#likes').attr("data-catid"),1);
-            });
+    // Like Button
+    $('#likes').click(function(){
+        var catid;
+        catid=$(this).attr("data-catid");
+        $.get('/rango/like_category/', {category_id: catid}, function(data){
+            $('#like_count').html(data);
+            $('#likes').hide();
+            //$('#likes').css("visibility", "hidden").hide();
+        });
     });
-    }else{
-        $('#likes').hide();
-    }
 
     // Dynamic category search suggestion
     $('#suggestion').keyup(function(){
@@ -37,20 +33,5 @@ $(document).ready(function(){
             me.hide();
         });
     });
-
-
-    // Like Button
-    /*$('#likes').click(function(){
-        if(!window.localStorage.getItem("disable")){
-            var catid;
-            catid=$(this).attr("data-catid");
-            $.get('/rango/like_category/', {category_id: catid}, function(data){
-                $('#like_count').html(data);
-                $('#likes').hide();
-                window.localStorage.setItem("disable",1);
-                //$('#likes').css("visibility", "hidden").hide();
-            });
-        }
-    });*/
 
 });
